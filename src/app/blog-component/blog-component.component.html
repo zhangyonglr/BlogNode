@@ -1,0 +1,32 @@
+<p>Blog-component Works!</p>
+
+<div class="row filtros">
+    <div class="barra col-12">
+        <select class="custom-select col-6 filtro" id="inputGroupSelect01" (change)="manejarCategorias($event)">
+            <option value="">Categorias</option>
+            <option value="deportes">Deportes</option>
+            <option value="ocio">Ocio</option>
+            <option value="turismo">Turismo</option>
+        </select>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row posts">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 margen" *ngFor="let post of listaPosts">
+            <div class="card post {{post.categoria}}">
+                <img src="{{post.imagen}}" class="card-img-top" alt="...">
+                <div class="card-body row">
+                    <h4 class="card-title col-12">{{post.titulo}}</h4>
+                    <p class="card-text col-12">{{post.texto}}</p>
+                    <p class="nombre card-text col-12">{{post.autor}}</p>
+                    <p class="card-text col-12">
+                        <small class="text-muted">{{post.fecha | date: 'dd/MM/yyyy HH:mm'}}</small>
+                    </p>
+                    <!--  <button type="button" class="btn justify-content-end"
+                        (click)="botonEliminar(post.id)">DELETE</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

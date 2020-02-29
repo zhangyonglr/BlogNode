@@ -1,0 +1,47 @@
+<p>formulario-component works!</p>
+
+<div class="row">
+    <form [formGroup]="formulario" (ngSubmit)="crearPost()">
+        <h3>NewPost</h3>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend ">
+                <span class="input-group-text escrito" id="inputGroup-sizing-default">Título</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" formControlName="titulo">
+        </div>
+        <div class="input-group texto">
+            <div class="input-group-prepend">
+                <span class="input-group-text escrito">Texto</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" formControlName="texto"></textarea>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text escrito" id="inputGroup-sizing-default">Autor</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" formControlName="autor">
+
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text escrito" id="inputGroup-sizing-default">Url imagen</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" formControlName="imagen">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text escrito" for="inputGroupSelect01">Categoria</label>
+            </div>
+            <select class="custom-select form-control" formControlName="categoria">
+                <option selected>Selecciona</option>
+                <option value="deportes">Deportes</option>
+                <option value="ocio">Ocio</option>
+                <option value="turismo">Turismo</option>
+            </select>
+        </div>
+        <input type="submit" value="Publicar" class="btn btn-block boton">
+    </form>
+</div>
